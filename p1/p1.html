@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="p1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Recomendador de Películas</title>
+  </head>
+  <body>
+    <header class="site_header centered">
+      <div class="semicirculo">
+        <h1 class="page_title">
+          <span id="logo"><span id="REC">REC</span>omendador dePelículas</span>
+        </h1>
+      </div>
+    </header>
+    <main>
+      <div class="description_box box">
+        <p id="description_text">
+          Bienvenido al mejor servicio de recomendación de películas. Aquí te
+          recomendaremos las películas que mas se acerquen a tus gustos y de las
+          que te enamorarás al instante. Para poder disfrutar de este servicio
+          rellena el formulario
+        </p>
+      </div>
+      <div class="formulario box">
+        <form id="myForm" onSubmit="return envio()" action="p1.php">
+          <fieldset>
+            <legend>Formulario de registro</legend>
+            <div class="campo_formulario">
+              <label class="titulo_campo">Nombre y Apellido</label>
+              <input
+                type="text"
+                name="cname"
+                id="nombre"
+                pattern="[a-zA-ZñÑÁÉÍÓÚáéíóú]{3,} [a-zA-ZñÑÁÉÍÓÚ]{3,}"
+              />
+              <p class="requisitos">
+                Nombre y apellido con un mínimo de 3 letras. Deben estar
+                formados solo letras del abecedario castellano.
+              </p>
+            </div>
+            <div class="campo_formulario">
+              <label class="titulo_campo">Username</label>
+              <input
+                type="text"
+                name="clogin"
+                id="login"
+                pattern="[a-zA-Z0-9]{4,8}"
+              />
+              <p class="requisitos">
+                Deben estar formados solo letras o números de un mínimo 4
+                caracteres y 8 como máximo.
+              </p>
+            </div>
+            <div class="campo_formulario">
+              <label class="titulo_campo">Contraseña</label>
+              <input type="password" name="cpasswd" id="passwd" />
+              <p class="requisitos">
+                Debe estar formada de entre 6 y 12 caracteres. Debe contener al
+                menos: 1 letra mayuscula y 1 minuscula, un número y un caracter
+                especial del grupo ( + - / * ).
+              </p>
+            </div>
+            <div class="campo_formulario">
+              <label class="titulo_campo">Teléfono</label>
+              <input type="text" name="ctlph" id="telephone" />
+              <p class="requisitos">
+                Debe estar formado por 9 números. Debe empezar por 6,7,8 o 9.
+              </p>
+            </div>
+            <div class="campo_formulario">
+              <label class="titulo_campo">Email</label>
+              <input type="email" name="cemail" id="email" />
+              <p class="requisitos">
+                Debe ser de la forma : nombre_mail@servidor.{com/es...}.
+                Ejemplo: mail@correo.com. No debe contener caracteres especiales
+                salvo ". _ -" y números.
+              </p>
+            </div>
+            <div class="campo_formulario">
+              <label class="titulo_campo">Rango de edad</label>
+              <div class="opciones_radio">
+                <div class="box_radio">
+                  <input type="radio" name="cage" id="-25" value="menor de 25" />
+                  <label class="opcion">menos de 25 años</label>
+                </div>
+                <div class="box_radio">
+                  <input type="radio" name="cage" id="25a40" value="entre 25 y 40" />
+                  <label class="opcion">entre 25 y 39 años</label>
+                </div>
+                <div class="box_radio">
+                  <input type="radio" name="cage" id="40a60" value="entre 40 y 60" />
+                  <label class="opcion">entre 40 y 60 años </label>
+                </div>
+                <div class="box_radio">
+                  <input type="radio" name="cage" id="+60" value="más de 60" />
+                  <label class="opcion">más de 60 años</label>
+                </div>
+              </div>
+            </div>
+            <div class="campo_formulario">
+              <label class="titulo_campo">Géneros que te interesan</label>
+              <table class="table_check">
+                <tr>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="action" />
+                    <label class="opcion">Acción</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="animation" />
+                    <label class="opcion">Animación</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="fiction" />
+                    <label class="opcion">Ficción</label>
+                  </td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="cgenre[]"
+                      value="documentary"
+                    />
+                    <label class="opcion">Documental</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="comedy" />
+                    <label class="opcion">Comedia</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="thriller" />
+                    <label class="opcion">Thriller</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="drama" />
+                    <label class="opcion">Drama</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="anime" />
+                    <label class="opcion">Anime</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="horror" />
+                    <label class="opcion">Terror</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="romantic" />
+                    <label class="opcion">Romántica</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="police" />
+                    <label class="opcion">Policiaca</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cgenre[]" value="docuserie" />
+                    <label class="opcion">Docuserie</label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="campo_formulario">
+              <label class="titulo_campo">Introduce un comentario</label>
+              <textarea
+                name="ccomment"
+                id="comment"
+                placeholder="  Introduce un comentario"
+              ></textarea>
+            </div>
+            <div class="campo_formulario">
+              <label class="titulo_campo"
+                >Selecciona tu proveedor de internet:</label
+              >
+              <select class="campo_select" name="cInternet" id="internet">
+                <option value="Movistar" selected>Movistar</option>
+                <option value="Vodafone">Vodafone</option>
+                <option value="Orange">Orange</option>
+                <option value="R">R</option>
+              </select>
+            </div>
+            <div class="campo_formulario">
+              <label class="titulo_campo"
+                >Selecciona el tipo de envio de datos:</label
+              >
+              <div class="opciones_radio">
+                <div class="box_radio">
+                  <input
+                    type="radio"
+                    name="method"
+                    id="methodGET"
+                    value="GET"
+                    onclick="GET_method()"
+                  />
+                  <label class="opcion">GET</label>
+                </div>
+                <div class="box_radio">
+                  <input
+                    type="radio"
+                    name="method"
+                    id="methodPOST"
+                    value="POST"
+                    onclick="POST_method()"
+                  />
+                  <label class="opcion">POST</label>
+                </div>
+              </div>
+            </div>
+            <div class="campo_formulario">
+              <label class="titulo_campo"
+                >Selecciona el tipo de codificación de datos:</label
+              >
+              <div class="opciones_radio">
+                <div class="box_radio">
+                  <input
+                    type="radio"
+                    name="codification"
+                    id="multipart"
+                    value="multipart/form-data"
+                  />
+                  <label class="opcion">multipart/form-data</label>
+                </div>
+                <div class="box_radio">
+                  <input
+                    type="radio"
+                    name="codification"
+                    id="urlencoded"
+                    value="application/x-www-form-urlencoded"
+                  />
+                  <label class="opcion"
+                    >application/x-www-form-urlencoded</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="campo_botones">
+              <button type="submit" class="btn">Enviar</button>
+              <button type="reset" class="btn">Resetear</button>
+            </div>
+            <input type="hidden" name="cbrowser" id="browser" />
+          </fieldset>
+        </form>
+      </div>
+    </main>
+    <footer class="bg_black">
+      <p id="copy">&copy;Isaac Naveira Comesaña</p>
+    </footer>
+  </body>
+  <script src="p1.js"></script>
+</html>

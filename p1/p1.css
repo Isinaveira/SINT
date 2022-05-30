@@ -1,0 +1,219 @@
+*,html{
+    margin:0;
+    padding: 0;
+    
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5% ; /**1rem=10px**/
+   
+    
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    font-family: 'Noto Sans Display', sans-serif;
+    background-position: center center;
+    background: linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)),url(/img/film.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*UTLITIES*/
+.centered{
+    text-align: center;
+}
+.bg_black{
+    background-color: rgb(71, 71, 71);
+}
+
+/*CODE */
+
+/*HEADER*/
+.semicirculo {
+	background: rgb(53, 53, 53);
+	height: 50%;
+	border-top-left-radius: 50% 100%;
+	border-top-right-radius: 50% 100%;
+	width: 90%;
+    margin-top: 9.0%;
+    box-shadow: 0 -10px 5px 5px rgb(39, 39, 39);
+}
+
+.site_header{
+    display:flex;
+    justify-content: center;
+    background-color: rgb(53, 53, 53);
+    color: white;
+    background-size: cover;
+    background-position: center center;
+    height: 25rem;
+}
+
+.page_title{
+    position: relative;
+    top:45%;
+    font-size: 6rem;
+    text-shadow: 5px 5px 3px grey;
+}
+/*-------------------*/
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.box{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 700px;
+}
+#description_text{
+    color:white;
+    text-align: left;
+    font-size: 3.5rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: 20px;
+    padding:20px;
+}
+/*formulario*/
+.formulario{
+    background-color: rgba(255, 255, 255, 0.596);
+    padding: 10px;
+}
+fieldset{
+    border: 3px none white;
+}
+legend{
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-right: 20px;
+    padding: 10px;
+    text-align: right;
+    color: white;
+    text-shadow: 2px 2px 2px grey;
+}
+
+/*Campos del formulario*/
+.campo_formulario{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.titulo_campo{
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+input[type=text],
+input[type=password],
+input[type=email]{
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    border-bottom: 2px solid black;
+    background-color: rgba(235, 230, 230,0.7);
+    font-size: 2.5rem;
+    font-weight: 200;
+    padding: 0 10px;
+}
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus{
+    outline:none;
+    border-bottom: 2px solid black;
+    background-color: rgba(235, 230, 230, 0.7);
+}
+input[type=text]:invalid,
+input[type=password]:invalid,
+input[type=email]:invalid{
+
+    background-color: rgba(250, 3, 3, 0.397);
+}
+.requisitos{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.opciones_radio{
+    display: flex;
+    justify-content: space-evenly;
+}
+.opcion{
+    font-size: 1.7rem;
+}
+#copy{
+    color: white;
+    font-size: 1.7rem;
+    text-align: center;
+}
+footer{
+    height: 50px;
+    padding: 10px;
+}
+#comment{
+    height: 10rem;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-size: 1.5rem;
+    padding: 2px;
+    background-color: rgba(235, 230, 230,0.7);
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    border-bottom: 2px solid black;
+}
+.campo_select{
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 600;
+}
+.campo_select:hover{
+    background-color: rgb(179, 219, 0);
+    color: white;
+}
+.campo_botones{
+    display:flex;
+    justify-content: space-around;
+}
+.btn{
+    font-size: 2.2rem;
+    font-weight: 600;
+    padding: 3px 20px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(117, 117, 117);
+    border-radius: 10px;
+}
+.btn:hover{
+    background-color: rgb(179, 219, 0);
+    color: white;
+}
+/*PHP*/
+.contenedor_pcpal_php{
+    padding:20px;
+    background-image: url(/img/film.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgb(119, 117, 117);
+    background-size: cover;
+}
+.contendor_datos{
+ padding: 10px;
+}
+
+.datos_formulario{
+    background-color: rgba(255, 255, 255, 0.589);
+    padding: 10px;
+}
+.fila_datos{
+    margin: 2px;
+}
+.field_data{
+    font-size: 25px;
+    font-weight: 600;
+}
+.data_value{
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.541);
+    border-bottom:2px solid black;
+    color: black;
+}
